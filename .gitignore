@@ -6,3 +6,9 @@ node_modules/**/*
 
 # Optional REPL history
 .node_repl_history
+
+# InteliJ
+.idea/
+
+#compass
+./sass-cache
