@@ -3,8 +3,10 @@ var gulp = require('gulp');
 
 // modules
 var clean = require('gulp-clean');
+var compass = require('gulp-compass');
 var concat = require('gulp-concat');
 var filesize = require('gulp-filesize');
+var compass = require('gulp-uglify');
 
 gulp.task('clean', function() {
   return gulp.src('/build', {read: false})
