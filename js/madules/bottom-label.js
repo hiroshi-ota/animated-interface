@@ -1,3 +1,8 @@
+
+/*
+ *  animated bottom label
+ */
+
 $(document).ready(function() {
 	var label = document.getElementById('bottom-label');
 	

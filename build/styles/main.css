@@ -9,6 +9,9 @@
 .text-second {
   color: #FFCC66; }
 
+/*
+ *  setting.scss
+ */
 body {
   font-family: "Josefin Slab", sans-serif;
   margin: 20px; }
