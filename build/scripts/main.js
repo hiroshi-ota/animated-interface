@@ -10353,7 +10353,9 @@ return jQuery;
 $(document).ready(function() {
 	var label = document.getElementById('bottom-label');
 	
-	$(label).jLetters();
+	$(label).jLetters({
+		animationSpeed: 300
+	});
 });
 (function ($) {
   var jLetters = function (element, options) {

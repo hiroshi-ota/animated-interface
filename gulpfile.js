@@ -11,10 +11,10 @@ var filesize = require('gulp-filesize');
 var uglify = require('gulp-uglify');
 var series = require('stream-series');
 var ify = require('gulp-if');
-var compass = require('gulp-compass');
 var sass = require('gulp-sass');
 var autoprefix = require('gulp-autoprefixer');
 var minifyCss = require('gulp-minify-css');
+var watch = require('gulp-watch');
 
 gulp.task('clean', function () {
   return gulp.src('/build', {read: false})
@@ -30,15 +30,17 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('styles', function () {
-  return series(gulp.src('sass/settings/*.scss'), gulp.src('sass/!(settings)/*.scss'))
-	.pipe(concat('all.scss'))
+  return gulp.src('sass/style.scss')
     .pipe(sass())
-    .pipe(autoprefix('last 2 version', 'safari 5', 'ie 7', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    .pipe(autoprefix('last 4 version', 'safari 5', 'ie 7', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     .pipe(concat('main.css'))
     .pipe(ify(!dev, minifyCss()))
     .pipe(gulp.dest('build/styles/'))
     .pipe(filesize())
 });
 
-gulp.task('build', ['clean', 'styles', 'scripts']);
+gulp.task('build', ['clean', 'styles', 'scripts'], function() {
+  gulp.watch('sass/**/*.scss', ['styles']);
+  gulp.watch('js/!(vendor)/*.js', ['scripts']);
+});
 

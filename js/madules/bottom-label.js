@@ -1,5 +1,7 @@
 $(document).ready(function() {
 	var label = document.getElementById('bottom-label');
 	
-	$(label).jLetters();
+	$(label).jLetters({
+		animationSpeed: 300
+	});
 });
