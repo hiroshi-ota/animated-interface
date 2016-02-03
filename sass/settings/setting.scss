@@ -1,0 +1,11 @@
+
+@import 'fonts';
+@import 'colors';
+
+$margin: 20px;
+
+body {
+	@extend .text-main;
+	font-family: $f-main;
+	margin: $margin;
+}

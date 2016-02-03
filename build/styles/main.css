@@ -1,3 +1,33 @@
+@import url(http://fonts.googleapis.com/css?family=Josefin+Slab:700,600,400,400italic,600italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+@import url(http://fonts.googleapis.com/css?family=Josefin+Slab:700,600,400,400italic,600italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+.text, .text-main, body, .text-second {
+  font-size: 14px; }
 
-.main-text {
-  color: black; }
+.text-main, body {
+  color: #6B6B6B; }
+
+.text-second {
+  color: #FFCC66; }
+
+body {
+  font-family: "Josefin Slab", sans-serif;
+  margin: 20px; }
+
+.text, .text-main, body, .text-second {
+  font-size: 14px; }
+
+.text-main, body {
+  color: #6B6B6B; }
+
+.text-second {
+  color: #FFCC66; }
+
+.label-text {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  margin: 20px;
+  position: fixed;
+  bottom: 100px;
+  right: -100px; }

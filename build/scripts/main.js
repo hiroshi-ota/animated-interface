@@ -10350,6 +10350,11 @@ return jQuery;
 
 }));
 
+$(document).ready(function() {
+	var label = document.getElementById('bottom-label');
+	
+	$(label).jLetters();
+});
 (function ($) {
   var jLetters = function (element, options) {
     /*INITIALISATION*
