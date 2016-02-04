@@ -3,10 +3,11 @@
  *  setting.scss
  */
 
-$margin: 20px;
+$margin-body: 20px auto 20px auto;
 
 body {
 	@extend .text-main;
 	font-family: $f-main;
-	margin: $margin;
+	width: 60%;
+	margin: $margin-body;
 }

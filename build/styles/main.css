@@ -15,7 +15,8 @@
  */
 body {
   font-family: "Josefin Sans", sans;
-  margin: 20px; }
+  width: 60%;
+  margin: 20px auto 20px auto; }
 
 .label-text {
   -webkit-transform: rotate(-90deg);
@@ -25,3 +26,29 @@ body {
   position: fixed;
   bottom: 100px;
   right: -110px; }
+
+.svg-wrapper {
+  position: absolute;
+  margin: 0 auto;
+  width: 60%;
+  height: 20%; }
+
+.shape {
+  width: 100%;
+  height: 100%;
+  stroke-dasharray: 2900;
+  stroke-dashoffset: -2550;
+  stroke-width: 8px;
+  fill: transparent;
+  stroke: #6B6B6B;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s, fill 1s; }
+
+.svg-wrapper:hover .shape {
+  stroke-width: 3px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 3000;
+  fill: #FFCC66; }
+
+#page-border {
+  width: 100%;
+  height: 100%; }

@@ -1,0 +1,35 @@
+
+
+.svg-wrapper {
+	position: absolute;
+	//top: 50%;
+	//transform: translateY(-50%);
+	margin: 0 auto;
+	width: 60%;
+	height: 20%;
+}
+
+.shape {
+	width: 100%;
+	height: 100%;
+	stroke-dasharray: 2900;
+	stroke-dashoffset: -2550;
+	stroke-width: 8px;
+	fill: transparent;
+	stroke: $c-main;
+	//border-bottom: 5px solid black;
+	transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s, fill 1s;
+}
+
+.svg-wrapper:hover .shape {
+	stroke-width: 3px;
+	stroke-dashoffset: 0;
+	stroke-dasharray: 3000;
+	fill: $c-second;
+}
+
+#page-border {
+	width: 100%;
+	height: 100%;
+}
+
