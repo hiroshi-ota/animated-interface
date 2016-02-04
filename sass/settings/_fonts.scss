@@ -3,12 +3,13 @@
 @import "colors";
 
 // :Josefin
-@import url(http://fonts.googleapis.com/css?family=Josefin+Slab:700,600,400,400italic,600italic,700italic);
+//@import url(http://fonts.googleapis.com/css?family=Josefin+Slab:700,600,400,400italic,600italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700,700italic,600italic,400italic);
 
 // :Pacifico
 @import url(http://fonts.googleapis.com/css?family=Pacifico);
 
-$f-main: 'Josefin Slab', sans-serif;
+$f-main: 'Josefin Sans', sans;
 $f-second: 'Pacifico', sans-serif;
 
 .text {font-size: 14px;}
@@ -16,6 +17,7 @@ $f-second: 'Pacifico', sans-serif;
 .text-main {
 	@extend .text;
 	color: $c-main;
+	font-weight: 600;
 }
 
 .text-second {

@@ -1,10 +1,11 @@
-@import url(http://fonts.googleapis.com/css?family=Josefin+Slab:700,600,400,400italic,600italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700,700italic,600italic,400italic);
 @import url(http://fonts.googleapis.com/css?family=Pacifico);
 .text, .text-main, body, .text-second {
   font-size: 14px; }
 
 .text-main, body {
-  color: #6B6B6B; }
+  color: #6B6B6B;
+  font-weight: 600; }
 
 .text-second {
   color: #FFCC66; }
@@ -13,7 +14,7 @@
  *  setting.scss
  */
 body {
-  font-family: "Josefin Slab", sans-serif;
+  font-family: "Josefin Sans", sans;
   margin: 20px; }
 
 .label-text {
@@ -23,4 +24,4 @@ body {
   margin: 20px;
   position: fixed;
   bottom: 100px;
-  right: -100px; }
+  right: -110px; }
