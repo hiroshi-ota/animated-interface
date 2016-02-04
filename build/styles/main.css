@@ -41,7 +41,7 @@ body {
   stroke-width: 8px;
   fill: transparent;
   stroke: #6B6B6B;
-  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s, fill 1s; }
+  transition: stroke-width 1s,  stroke-dashoffset 1s,  stroke-dasharray 1s,  fill 1s; }
 
 .svg-wrapper:hover .shape {
   stroke-width: 3px;
