@@ -15,6 +15,7 @@ var sass = require('gulp-sass');
 var autoprefix = require('gulp-autoprefixer');
 var minifyCss = require('gulp-minify-css');
 var watch = require('gulp-watch');
+var jsImports = require('gulp-imports');
 
 gulp.task('clean', function () {
   return gulp.src('/build', {read: false})
@@ -22,7 +23,8 @@ gulp.task('clean', function () {
 });
 
 gulp.task('scripts', function () {
-  return series(gulp.src('js/vendor/*.js'), gulp.src('js/!(vendor)/*.js'))
+  gulp.src(['js/scripts.js'])
+    .pipe(jsImports())
     .pipe(concat('main.js'))
     .pipe(ify(!dev, uglify()))
     .pipe(gulp.dest('build/scripts/'))

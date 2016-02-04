@@ -1,3 +1,8 @@
+
+/*
+ *  animated jLetters
+ */
+
 (function ($) {
   var jLetters = function (element, options) {
     /*INITIALISATION*

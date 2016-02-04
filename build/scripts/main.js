@@ -1,3 +1,8 @@
+
+/*
+ *  vendor
+ */
+
 /*!
  * jQuery JavaScript Library v1.11.3
  * http://jquery.com/
@@ -10352,16 +10357,18 @@ return jQuery;
 
 
 /*
- *  animated bottom label
+ *  modules
  */
 
-$(document).ready(function() {
-	var label = document.getElementById('bottom-label');
-	
-	$(label).jLetters({
-		animationSpeed: 300
-	});
-});
+/**
+ * Created by Kamil on 04.02.2016.
+ */
+
+
+/*
+ *  animated jLetters
+ */
+
 (function ($) {
   var jLetters = function (element, options) {
     /*INITIALISATION*
@@ -10462,6 +10469,18 @@ $(document).ready(function() {
 
 }(jQuery));
 
+
+/*
+ *  animated bottom label
+ */
+
+$(document).ready(function() {
+	var label = document.getElementById('bottom-label');
+	
+	$(label).jLetters({
+		animationSpeed: 300
+	});
+});
 function test() {
   alert('dziala');
 }
