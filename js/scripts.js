@@ -9,7 +9,7 @@
  *  modules
  */
 
-//import('modules/preloader.js');
 //import('modules/jLetters.js');
+//import('modules/preloader.js');
 //import('modules/bottom-label.js');
 //import('modules/menu.js');

@@ -10360,10 +10360,6 @@ return jQuery;
  *  modules
  */
 
-/**
- * Created by Kamil on 04.02.2016.
- */
-
 
 /*
  *  animated jLetters
@@ -10468,6 +10464,29 @@ return jQuery;
   ExceptionLog.prototype = Error.prototype;
 
 }(jQuery));
+
+/*
+ *
+ *  site pre-loader
+ */
+
+(function(){
+  var loader = $('.loader'),
+      welcome = document.createElement('h1');
+
+  welcome.innerHTML = 'Welcome';
+  welcome.className = 'welcome';
+  loader.append(welcome);
+
+  $(welcome).jLetters({
+    animationSpeed: 600
+  });
+
+  $(window).load(function() {
+    loader.fadeOut('slow');
+  });
+}());
+
 
 
 /*
