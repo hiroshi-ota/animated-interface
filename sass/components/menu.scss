@@ -5,6 +5,11 @@
 header {
 
   .menu {
+
+    //ul {
+    //  background-color: $c-third;
+    //}
+
     li {
       position: relative;
       display: inline-block;
@@ -17,7 +22,7 @@ header {
       }
 
       a {
-        @include hover-color-change($c-main, $c-second);
+        @include hover-color-shadow($c-main, $c-second, 1px 1px 1px $c-main);
       }
     }
 

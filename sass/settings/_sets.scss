@@ -5,10 +5,11 @@
   position: fixed;
 }
 
-@mixin hover-color-change($color1, $color2) {
+@mixin hover-color-shadow($color1, $color2, $shadow: none) {
 	color: $color1;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease-in-out;
     &:hover {
       color: $color2;
+      text-shadow: $shadow;
     }
 }
