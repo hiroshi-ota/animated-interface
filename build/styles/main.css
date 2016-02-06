@@ -167,20 +167,28 @@ header .menu li {
   font-family: "Pacifico", sans-serif;
   font-size: 20px;
   font-weight: 100; }
-  header .menu li .sub ul {
-    position: absolute;
-    padding: 0 25%; }
-  header .menu li .sub .sub-elem {
-    background-color: transparent !important;
-    display: none;
-    color: #FFCC66;
-    margin: 0; }
-  header .menu li .sub a {
-    color: #FFCC66;
-    transition: color 0.3s ease-in-out; }
-    header .menu li .sub a:hover {
-      color: #FFEEBB;
-      text-shadow: none; }
+  header .menu li.elem {
+    transition: all 0.3s ease; }
+    header .menu li.elem:hover {
+      -webkit-transform: scale(1.3);
+          -ms-transform: scale(1.3);
+              transform: scale(1.3); }
+  header .menu li .sub {
+    position: relative; }
+    header .menu li .sub ul {
+      position: absolute;
+      padding: 0 25%; }
+    header .menu li .sub .sub-elem {
+      background-color: transparent !important;
+      display: none;
+      color: #FFCC66;
+      margin: 0; }
+    header .menu li .sub a {
+      color: #FFCC66;
+      transition: color 0.3s ease-in-out; }
+      header .menu li .sub a:hover {
+        color: #FFEEBB;
+        text-shadow: none; }
   header .menu li:nth-child(n+2) {
     margin-left: 100px; }
   header .menu li a {

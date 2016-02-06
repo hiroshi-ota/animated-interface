@@ -22,11 +22,16 @@ header {
       @include header-menu-font();
 
       &.elem {
+        transition:all 0.3s ease;
+        &:hover {
+          transform: scale(1.3);
+        }
       }
 
       .sub{
+        position: absolute;
         ul {
-          position: absolute;
+          //position: absolute;
           padding: 0 25%;
         }
         .sub-elem{
@@ -49,35 +54,6 @@ header {
         @include hover-color-shadow($c-main, $c-second, 1px 1px 1px $c-main);
       }
     }
-
-    .header-menu-svg {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      margin-left: -25px;
-    }
-
-    .menu-shape {
-      width: 100px;
-      height: 25px;
-      stroke-dasharray: 2900;
-      stroke-dashoffset: -2550;
-      stroke-width: 8px;
-      fill: transparent;
-      stroke: $c-main;
-      //border-bottom: 5px solid black;
-      transition:
-              stroke-width 1s,
-              stroke-dashoffset 1s,
-              stroke-dasharray 1s
-    }
-
-    .menu-shape:hover  {
-      stroke-width: 3px;
-      stroke-dashoffset: 0;
-      stroke-dasharray: 3000;
-    }
-
   }
 }
 
