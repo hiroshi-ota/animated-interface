@@ -4,7 +4,6 @@
     <title>Animated Interface</title>
 
     <link rel="stylesheet" href="build/styles/main.css" type="text/css">
-    <script src="build/scripts/main.js" type="text/javascript"></script>
 </head>
 <body>
 <div class="label-text" id="bottom-label">
@@ -13,11 +12,29 @@
 
 <header>
     <div class="menu">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Animations</a></li>
-            <li><a href="#">Modules</a></li>
-            <li>
+        <ul class="first">
+            <li class="elem"><a href="#">Home</a></li>
+            <li class="elem"><a href="#">Animations</a>
+                <div class="sub">
+                    <ul>
+                        <li class="sub-elem"><a href="#">test1</a></li>
+                        <li class="sub-elem"><a href="#">test2</a></li>
+                        <li class="sub-elem"><a href="#">test3</a></li>
+                        <li class="sub-elem"><a href="#">test4</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="elem"><a href="#">Modules</a>
+                <div class="sub">
+                    <ul>
+                        <li class="sub-elem"><a href="#">test1</a></li>
+                        <li class="sub-elem"><a href="#">test2</a></li>
+                        <li class="sub-elem"><a href="#">test3</a></li>
+                        <li class="sub-elem"><a href="#">test4</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="elem">
                 <a href="pages/contact.html">Contact</a>
             </li>
         </ul>
@@ -70,5 +87,6 @@
     <!--eleifend, dignissim ligula nec, bibendum elit. Sed eleifend nunc sit amet pretium vulputate.-->
 <!--</p>-->
 
+<script src="build/scripts/main.js" type="text/javascript"></script>
 </body>
 </html>

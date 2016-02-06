@@ -6,9 +6,13 @@ header {
 
   .menu {
 
-    //ul {
-    //  background-color: $c-third;
-    //}
+    ul {
+      &.first {
+        text-align: center;
+        margin-left: - ($menu-elem-margin/2);
+        padding: 0;
+      }
+    }
 
     li {
       position: relative;
@@ -17,8 +21,28 @@ header {
       list-style: none;
       @include header-menu-font();
 
+      &.elem {
+      }
+
+      .sub{
+        ul {
+          position: absolute;
+          padding: 0 25%;
+        }
+        .sub-elem{
+          background-color: transparent !important;
+          display: none;
+          color: $c-second;
+          margin: 0;
+        }
+
+        a {
+          @include hover-color-shadow($c-second, $c-third);
+        }
+      }
+
       &:nth-child(n+2) {
-        margin-left: $margin-s;
+        margin-left: $menu-elem-margin;
       }
 
       a {
