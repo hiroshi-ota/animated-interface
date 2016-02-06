@@ -150,6 +150,47 @@ body {
   width: 60%;
   margin: 20px auto 20px auto; }
 
+a {
+  text-decoration: none;
+  color: #6B6B6B; }
+
+header .menu li {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  list-style: none;
+  font-family: "Pacifico", sans-serif;
+  font-size: 20px;
+  font-weight: 100; }
+  header .menu li:nth-child(n+2) {
+    margin-left: 10px; }
+  header .menu li a {
+    color: #6B6B6B;
+    transition: color 0.3s ease; }
+    header .menu li a:hover {
+      color: #FFCC66; }
+
+header .menu .header-menu-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin-left: -25px; }
+
+header .menu .menu-shape {
+  width: 100px;
+  height: 25px;
+  stroke-dasharray: 2900;
+  stroke-dashoffset: -2550;
+  stroke-width: 8px;
+  fill: transparent;
+  stroke: #6B6B6B;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s; }
+
+header .menu .menu-shape:hover {
+  stroke-width: 3px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 3000; }
+
 .label-text {
   -webkit-transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);

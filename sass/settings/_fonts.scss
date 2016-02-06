@@ -26,3 +26,9 @@ $f-second: 'Pacifico', sans-serif;
 }
 
 // mixins
+
+@mixin header-menu-font() {
+	font-family: $f-second;
+	font-size: $font-l;
+	font-weight: 100;
+}

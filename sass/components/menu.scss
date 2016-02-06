@@ -1,0 +1,55 @@
+// ***** MENU *****
+
+// header menu
+
+header {
+
+  .menu {
+    li {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      list-style: none;
+      @include header-menu-font();
+
+      &:nth-child(n+2) {
+        margin-left: $margin-s;
+      }
+
+      a {
+        @include hover-color-change($c-main, $c-second);
+      }
+    }
+
+    .header-menu-svg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      margin-left: -25px;
+    }
+
+    .menu-shape {
+      width: 100px;
+      height: 25px;
+      stroke-dasharray: 2900;
+      stroke-dashoffset: -2550;
+      stroke-width: 8px;
+      fill: transparent;
+      stroke: $c-main;
+      //border-bottom: 5px solid black;
+      transition:
+              stroke-width 1s,
+              stroke-dashoffset 1s,
+              stroke-dasharray 1s
+    }
+
+    .menu-shape:hover  {
+      stroke-width: 3px;
+      stroke-dashoffset: 0;
+      stroke-dasharray: 3000;
+    }
+
+  }
+}
+
+

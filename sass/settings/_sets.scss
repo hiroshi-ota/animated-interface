@@ -1,6 +1,14 @@
-@mixin text-vertical($margin, $float: none){
-	transform: rotate(-90deg);
-	margin: $margin;
-	position: fixed;
+
+@mixin text-vertical($margin, $float: none) {
+  transform: rotate(-90deg);
+  margin: $margin;
+  position: fixed;
 }
 
+@mixin hover-color-change($color1, $color2) {
+	color: $color1;
+    transition: color 0.3s ease;
+    &:hover {
+      color: $color2;
+    }
+}
