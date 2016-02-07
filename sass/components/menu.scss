@@ -29,13 +29,12 @@ header {
       }
 
       .sub{
-        position: absolute;
         ul {
-          //position: absolute;
+          position: absolute;
           padding: 0 25%;
         }
         .sub-elem{
-          background-color: transparent !important;
+          //background-color: transparent !important;
           display: none;
           color: $c-second;
           margin: 0;

@@ -7,7 +7,7 @@
 body {
 	@extend .text-main;
 	font-family: $f-main;
-	width: 60%;
+	width: $body-width;
 	margin: $margin-body;
 	//border-left: 1px solid $c-third;
 	//border-right: 1px solid $c-third;
@@ -17,4 +17,9 @@ body {
 a {
 	text-decoration: none;
 	color: $c-main;
+}
+
+//  header
+header {
+	height: $header-height;
 }
