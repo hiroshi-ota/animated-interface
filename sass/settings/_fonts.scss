@@ -4,12 +4,13 @@
 
 // :Josefin
 //@import url(http://fonts.googleapis.com/css?family=Josefin+Slab:700,600,400,400italic,600italic,700italic);
-@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700,700italic,600italic,400italic);
-
+//@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700,700italic,600italic,400italic);
+@import url(https://fonts.googleapis.com/css?family=Raleway);
 // :Pacifico
-@import url(http://fonts.googleapis.com/css?family=Pacifico);
+//@import url(http://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
 
-$f-main: 'Josefin Sans', sans;
+$f-main: 'Ubuntu', sans-serif;
 $f-second: 'Pacifico', sans-serif;
 
 .text {font-size: 14px;}
@@ -17,7 +18,8 @@ $f-second: 'Pacifico', sans-serif;
 .text-main {
 	@extend .text;
 	color: $c-main;
-	font-weight: 600;
+	font-weight: 100;
+	line-height: 1.5;
 }
 
 .text-second {
