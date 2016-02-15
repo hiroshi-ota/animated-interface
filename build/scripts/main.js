@@ -10535,7 +10535,7 @@ var reloader = (function () {
   var setContext = function(target) {
     document.title = target.text;
 
-    stateHelper.setActualState('..' + target.pathname);
+    stateHelper.setActualState(target);
     console.log(window.history);
   };
 
@@ -10556,39 +10556,26 @@ var reloader = (function () {
 }());
 
 
-
 var stateHelper = (function() {
 
   var states = {
     prev: '',
     act: ''
-  },
-      i = 0;
+  };
 
-  var setActualState = function(actual) {
-
-    var state = generateState();
-    window.history.pushState({"state": target.pathname + '.html'}, target.text, target.text + '.html');
-    //!!states.act ? states.prev = states.act : '';
-    //states.act = actual;
+  var setActualState = function(target) {
+    window.history.pushState({"content": '..' + target.pathname}, '', target.text);
   };
 
   function getStates() {
     return states;
   }
 
-  function generateState() {
-    return 'state' + i;
-  }
-
-  $(window).on('hashchange', function() {
-    reloader.loadContent(states.prev);
+  $(window).on('popstate', function() {
+    if(history.state) {
+      reloader.loadContent(history.state.content);
+    }
   });
-  //document.on('reloader-state-change', function() {
-  //  var state = document.getElementById('main-container');
-  //  setActualState(state.innerHTML);
-  //
-  //});
 
   return {
     historyStates: getStates,
