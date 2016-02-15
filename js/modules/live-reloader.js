@@ -44,27 +44,20 @@ var reloader = (function () {
 
 var stateHelper = (function() {
 
-  var states = {
-    prev: '',
-    act: ''
-  };
-
-  var setActualState = function(target) {
+  function setActualState(target) {
     window.history.pushState({"content": '..' + target.pathname}, '', target.text);
-  };
-
-  function getStates() {
-    return states;
   }
 
   $(window).on('popstate', function() {
-    if(history.state) {
-      reloader.loadContent(history.state.content);
-    }
+    history.state ?
+      reloader.loadContent(history.state.content) : '';
   });
 
+  (function() {
+    window.history.pushState({"content": '..' + '/animated-interface/pages/home.html'}, '', 'home');
+  }());
+
   return {
-    historyStates: getStates,
     setActualState: setActualState
   }
 }());
