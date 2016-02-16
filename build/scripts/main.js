@@ -10536,7 +10536,6 @@ var reloader = (function () {
     document.title = target.text;
 
     stateHelper.setActualState(target);
-    console.log(window.history);
   };
 
   var refreshScripts = function() {
@@ -10562,7 +10561,13 @@ var stateHelper = (function() {
     window.history.pushState({"content": '..' + target.pathname}, '', target.text);
   }
 
-  $(window).on('popstate', function() {
+  function preventRefresh() {
+    reloader.loadContent(history.state.content);
+  }
+
+  window.onbeforeunload = preventRefresh();
+
+  $(window).on('popstate', function(e) {
     history.state ?
       reloader.loadContent(history.state.content) : '';
   });
