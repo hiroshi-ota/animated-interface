@@ -10560,7 +10560,6 @@ var stateHelper = (function() {
 
   function setActualState(target) {
     window.history.pushState({"content": '..' + target.pathname}, '', target.text);
-    window.confirm('lol');
   }
 
   function preventRefresh(e) {
