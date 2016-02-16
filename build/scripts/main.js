@@ -10527,6 +10527,7 @@ var reloader = (function () {
     $reloader.animate({
       opacity: 0
     }, 150, function() {
+      console.log(target);
       $reloader.load(target);
       $reloader.animate({opacity: 1}, 300);
     });
@@ -10559,13 +10560,20 @@ var stateHelper = (function() {
 
   function setActualState(target) {
     window.history.pushState({"content": '..' + target.pathname}, '', target.text);
+    window.confirm('lol');
   }
 
-  function preventRefresh() {
-    reloader.loadContent(history.state.content);
-  }
+  function preventRefresh(e) {
+    return false;
 
-  window.onbeforeunload = preventRefresh();
+    //return (function() {
+    //  window.history.pushState({"content":'../animated-interface/pages/home.html'}, '', 'index.html');
+    //  $(document).onload(function() {
+    //    alert('dziala');
+    //  });
+    //  return 'Czy jesteś pewien że checsz opuścić tą stronę?';
+    //}());
+  }
 
   $(window).on('popstate', function(e) {
     history.state ?
@@ -10573,10 +10581,14 @@ var stateHelper = (function() {
   });
 
   (function() {
-    window.history.pushState({"content": '..' + '/animated-interface/pages/home.html'}, '', 'home');
+    window.history.pushState({"content":'../animated-interface/pages/home.html'}, '', 'index.html');
+    reloader.loadContent(window.history.state.content);
   }());
 
+  window.onbeforeunload = preventRefresh;
+
   return {
-    setActualState: setActualState
+    setActualState: setActualState,
+    preventRefresh: preventRefresh
   }
 }());
