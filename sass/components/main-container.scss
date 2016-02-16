@@ -3,4 +3,8 @@
 #main-container {
   padding: $padding-l 0;
 
+  .section {
+    opacity: 0;
+    margin-bottom: 300px;
+  }
 }

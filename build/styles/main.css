@@ -157,6 +157,9 @@ a {
 
 #main-container {
   padding: 50px 0; }
+  #main-container .section {
+    opacity: 0;
+    margin-bottom: 300px; }
 
 /*
  *

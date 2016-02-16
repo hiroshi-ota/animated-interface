@@ -10355,6 +10355,55 @@ return jQuery;
 
 }));
 
+/*
+ * jQuery throttle / debounce - v1.1 - 3/7/2010
+ * http://benalman.com/projects/jquery-throttle-debounce-plugin/
+ *
+ * Copyright (c) 2010 "Cowboy" Ben Alman
+ * Dual licensed under the MIT and GPL licenses.
+ * http://benalman.com/about/license/
+ */
+(function(b,c){var $=b.jQuery||b.Cowboy||(b.Cowboy={}),a;$.throttle=a=function(e,f,j,i){var h,d=0;if(typeof f!=="boolean"){i=j;j=f;f=c}function g(){var o=this,m=+new Date()-d,n=arguments;function l(){d=+new Date();j.apply(o,n)}function k(){h=c}if(i&&!h){l()}h&&clearTimeout(h);if(i===c&&m>e){l()}else{if(f!==true){h=setTimeout(i?k:l,i===c?e-m:e)}}}if($.guid){g.guid=j.guid=j.guid||$.guid++}return g};$.debounce=function(d,e,f){return f===c?a(d,e,false):a(d,f,e!==false)}})(this);
+
+/*
+ *  utility
+ */
+
+
+/*
+ *  isInViewport
+ *  @is-in-viewport.js
+ */
+
+var isInViewport = (function () {
+
+  function check(el){
+    console.log(el);
+    //special bonus for those using jQuery
+    if (typeof jQuery !== 'undefined' && el instanceof jQuery) el = el[0];
+
+    var rect = el.getBoundingClientRect();
+    // DOMRect { x: 8, y: 8, width: 100, height: 100, top: 8, right: 108, bottom: 108, left: 8 }
+    var windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+    var windowWidth = (window.innerWidth || document.documentElement.clientWidth);
+
+    // http://stackoverflow.com/questions/325933/determine-whether-two-date-ranges-overlap
+    var vertInView = (rect.top <= windowHeight) && ((rect.top + rect.height) >= 0);
+    var horInView = (rect.left <= windowWidth) && ((rect.left + rect.width) >= 0);
+
+    return (vertInView && horInView);
+  }
+
+  function watch(el) {
+    $(window).scroll($.throttle(300, check.call(null, el)));
+  }
+
+  return {
+    check: check,
+    watch: watch
+  }
+
+}());
 
 /*
  *  modules
@@ -10364,6 +10413,43 @@ return jQuery;
  * Created by Kamil on 04.02.2016.
  */
 
+
+/*
+ *  animated section
+ *  @animated-section.js
+ */
+
+var animatedSection = (function() {
+
+  var sections;
+
+  $(window).on('container-loaded', init);
+
+  function init() {
+    sections = $('#main-container > .section');
+    animateSection();
+  }
+
+  function animateSection() {
+    sections.each(function(i) {
+      console.log(this);
+      $(this).animate({
+        opacity: 1
+      }, (500*i) )
+    });
+
+    setTimeout(function() {
+      sections.each(function(i) {
+        console.log(isInViewport.watch(this));
+      });
+    })
+  }
+
+  function isSectionVisible() {
+
+  }
+
+ }());
 
 /*
  *  animated jLetters
@@ -10524,22 +10610,18 @@ var reloader = (function () {
       links = $('.reloader-link');
 
   var loadContent = function (target) {
-    $reloader.animate({
-      opacity: 0
-    }, 150, function() {
-      console.log(target);
-      $reloader.load(target);
-      $reloader.animate({opacity: 1}, 300);
-    });
+    $reloader.load(target, function () {
+        $(window).trigger('container-loaded');
+      });
   };
 
-  var setContext = function(target) {
+  var setContext = function (target) {
     document.title = target.text;
 
     stateHelper.setActualState(target);
   };
 
-  var refreshScripts = function() {
+  var refreshScripts = function () {
     location.reload();
   };
 
@@ -10556,14 +10638,14 @@ var reloader = (function () {
 }());
 
 
-var stateHelper = (function() {
+var stateHelper = (function () {
 
   function setActualState(target) {
     window.history.pushState({"content": '..' + target.pathname}, '', target.text);
   }
 
   function preventRefresh(e) {
-    return false;
+    window.history.pushState({"content": '../animated-interface/pages/home.html'}, '', 'index.html');
 
     //return (function() {
     //  window.history.pushState({"content":'../animated-interface/pages/home.html'}, '', 'index.html');
@@ -10574,13 +10656,13 @@ var stateHelper = (function() {
     //}());
   }
 
-  $(window).on('popstate', function(e) {
+  $(window).on('popstate', function (e) {
     history.state ?
       reloader.loadContent(history.state.content) : '';
   });
 
-  (function() {
-    window.history.pushState({"content":'../animated-interface/pages/home.html'}, '', 'index.html');
+  (function () {
+    window.history.pushState({"content": '../animated-interface/pages/home.html'}, '', 'index.html');
     reloader.loadContent(window.history.state.content);
   }());
 

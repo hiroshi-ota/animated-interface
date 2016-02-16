@@ -10,22 +10,18 @@ var reloader = (function () {
       links = $('.reloader-link');
 
   var loadContent = function (target) {
-    $reloader.animate({
-      opacity: 0
-    }, 150, function() {
-      console.log(target);
-      $reloader.load(target);
-      $reloader.animate({opacity: 1}, 300);
-    });
+    $reloader.load(target, function () {
+        $(window).trigger('container-loaded');
+      });
   };
 
-  var setContext = function(target) {
+  var setContext = function (target) {
     document.title = target.text;
 
     stateHelper.setActualState(target);
   };
 
-  var refreshScripts = function() {
+  var refreshScripts = function () {
     location.reload();
   };
 
@@ -42,14 +38,14 @@ var reloader = (function () {
 }());
 
 
-var stateHelper = (function() {
+var stateHelper = (function () {
 
   function setActualState(target) {
     window.history.pushState({"content": '..' + target.pathname}, '', target.text);
   }
 
   function preventRefresh(e) {
-    return false;
+    window.history.pushState({"content": '../animated-interface/pages/home.html'}, '', 'index.html');
 
     //return (function() {
     //  window.history.pushState({"content":'../animated-interface/pages/home.html'}, '', 'index.html');
@@ -60,13 +56,13 @@ var stateHelper = (function() {
     //}());
   }
 
-  $(window).on('popstate', function(e) {
+  $(window).on('popstate', function (e) {
     history.state ?
       reloader.loadContent(history.state.content) : '';
   });
 
-  (function() {
-    window.history.pushState({"content":'../animated-interface/pages/home.html'}, '', 'index.html');
+  (function () {
+    window.history.pushState({"content": '../animated-interface/pages/home.html'}, '', 'index.html');
     reloader.loadContent(window.history.state.content);
   }());
 
