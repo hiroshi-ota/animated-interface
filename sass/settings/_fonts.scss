@@ -6,13 +6,16 @@
 //@import url(http://fonts.googleapis.com/css?family=Josefin+Slab:700,600,400,400italic,600italic,700italic);
 //@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700,700italic,600italic,400italic);
 //@import url(https://fonts.googleapis.com/css?family=Raleway);
-@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+//@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+//@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
 
 // :Pacifico
 @import url(http://fonts.googleapis.com/css?family=Pacifico);
 
 
-$f-main: 'Ubuntu', sans-serif;
+//$f-main: 'Ubuntu', sans-serif;
+$f-main: 'Lato', sans-serif;
 $f-second: 'Pacifico', sans-serif;
 
 .text {font-size: 14px;}

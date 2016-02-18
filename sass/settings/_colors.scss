@@ -1,5 +1,10 @@
 // Main colors
 
-$c-main: #6B6B6B;
+$c-main: #E8E8E8;//#6B6B6B;
 $c-second: #FFCC66;
 $c-third: #FFEEBB;
+
+// backgrounds
+
+$mainBackground: radial-gradient(ellipse farthest-side at
+                  100% 100%, #B5CE8B 5%, #085078 130%);

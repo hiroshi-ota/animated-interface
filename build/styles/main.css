@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
 @import url(http://fonts.googleapis.com/css?family=Pacifico);
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
   display: block; }
@@ -136,7 +136,7 @@ table {
   font-size: 14px; }
 
 .text-main, body {
-  color: #6B6B6B;
+  color: #E8E8E8;
   font-weight: 100;
   line-height: 1.5; }
 
@@ -147,13 +147,14 @@ table {
  *  setting.scss
  */
 body {
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Lato", sans-serif;
   width: 60%;
-  margin: 20px auto 20px auto; }
+  margin: 20px auto 20px auto;
+  background: radial-gradient(ellipse farthest-side at 100% 100%, #B5CE8B 5%, #085078 130%); }
 
 a {
   text-decoration: none;
-  color: #6B6B6B; }
+  color: #E8E8E8; }
 
 #main-container {
   padding: 50px 0; }
@@ -204,11 +205,11 @@ header .menu li {
   header .menu li:nth-child(n+2) {
     margin-left: 100px; }
   header .menu li a {
-    color: #6B6B6B;
+    color: #E8E8E8;
     transition: color 0.3s ease-in-out; }
     header .menu li a:hover {
       color: #FFCC66;
-      text-shadow: 1px 1px 1px #6B6B6B; }
+      text-shadow: 1px 1px 1px #E8E8E8; }
 
 .label-text {
   -webkit-transform: rotate(-90deg);
@@ -232,7 +233,7 @@ header .menu li {
   stroke-dashoffset: -2550;
   stroke-width: 8px;
   fill: transparent;
-  stroke: #6B6B6B;
+  stroke: #E8E8E8;
   transition: stroke-width 1s,  stroke-dashoffset 1s,  stroke-dasharray 1s,  fill 1s; }
 
 .svg-wrapper:hover .shape {
