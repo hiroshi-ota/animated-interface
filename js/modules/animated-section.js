@@ -19,13 +19,14 @@ var animatedSection = (function() {
     sections.each(function(i) {
       console.log(this);
       $(this).animate({
-        opacity: 1
-      }, (500*i) )
+        opacity: 1,
+        marginTop: 0
+      }, (500*i) + (500) )
     });
 
     setTimeout(function() {
       sections.each(function(i) {
-        console.log(isInViewport.watch(this));
+        //console.log(isInViewport.watch(this));
       });
     })
   }
