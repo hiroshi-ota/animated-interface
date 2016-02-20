@@ -17,7 +17,6 @@ var reloader = (function () {
 
   var setContext = function (target) {
     document.title = target.text;
-
     stateHelper.setActualState(target);
   };
 

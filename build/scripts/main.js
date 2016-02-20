@@ -10618,7 +10618,6 @@ var reloader = (function () {
 
   var setContext = function (target) {
     document.title = target.text;
-
     stateHelper.setActualState(target);
   };
 
@@ -10674,6 +10673,8 @@ var stateHelper = (function () {
     preventRefresh: preventRefresh
   }
 }());
-var gallery = function() {
-
-};
+if($('#main-container').hasClass('gallery')){
+  (function gallery() {
+  alert('gallery');
+}());
+}

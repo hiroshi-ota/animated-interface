@@ -1,3 +1,3 @@
-var gallery = function() {
-
-};
+(function gallery() {
+  alert('gallery');
+}());
