@@ -54,7 +54,7 @@ header {
       }
 
       a {
-        @include hover-color-shadow($c-main, $c-second, 1px 1px 1px $c-main);
+        //@include hover-color-shadow($c-main, $c-second, 1px 1px 1px $c-main);
       }
     }
   }

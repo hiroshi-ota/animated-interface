@@ -141,7 +141,7 @@ table {
   line-height: 1.5; }
 
 .text-second {
-  color: #FFCC66; }
+  color: #E8E8E8; }
 
 /*
  *  setting.scss
@@ -195,22 +195,16 @@ header .menu li {
   header .menu li .sub .sub-elem {
     position: relative;
     display: none;
-    color: #FFCC66;
+    color: #E8E8E8;
     margin: 0; }
   header .menu li .sub a {
-    color: #FFCC66;
+    color: #E8E8E8;
     transition: color 0.3s ease-in-out; }
     header .menu li .sub a:hover {
       color: #FFEEBB;
       text-shadow: none; }
   header .menu li:nth-child(n+2) {
     margin-left: 100px; }
-  header .menu li a {
-    color: #E8E8E8;
-    transition: color 0.3s ease-in-out; }
-    header .menu li a:hover {
-      color: #FFCC66;
-      text-shadow: 1px 1px 1px #E8E8E8; }
 
 .label-text {
   -webkit-transform: rotate(-90deg);
@@ -241,7 +235,7 @@ header .menu li {
   stroke-width: 3px;
   stroke-dashoffset: 0;
   stroke-dasharray: 3000;
-  fill: #FFCC66; }
+  fill: #E8E8E8; }
 
 #page-border {
   width: 100%;

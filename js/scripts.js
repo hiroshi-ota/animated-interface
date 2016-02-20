@@ -22,3 +22,4 @@
 //import('modules/bottom-label.js');
 //import('modules/menu.js');
 //import('modules/live-reloader.js');
+//import('modules/gallery.js');

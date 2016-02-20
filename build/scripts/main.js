@@ -10674,3 +10674,6 @@ var stateHelper = (function () {
     preventRefresh: preventRefresh
   }
 }());
+var gallery = function() {
+
+};
