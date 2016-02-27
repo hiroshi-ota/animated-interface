@@ -22,6 +22,7 @@
 
 //import('modules/preloader.js');
 //import('modules/menu.js');
+//import('modules/page-module.js');
 //import('modules/animated-section.js');
 //import('modules/jLetters.js');
 //import('modules/bottom-label.js');
