@@ -2,13 +2,23 @@
  *  menu header
  */
 
-$(document).ready(function () {
+(function() {
+  $('header').load('../pages/modules/menu.html');
+}());
 
-  var $subMenu = $('.sub');
-      $mainElem = $('.elem');
+(function menu() {
 
+  var $mainElem = $('.elem');
+
+  if($mainElem.children().length < 1){
+    setTimeout(function() {
+      menu();
+      return false;
+    },100)
+  }
 
   $mainElem.on('mouseover', function(elem){
+    console.log('najezdzam');
     var subMenu = $(this).find('.sub');
     var elements = subMenu.find('.sub-elem');
     elements.each(function(i, e){

@@ -1,4 +1,3 @@
-
 /*
  *  vendor
  */
@@ -10366,6 +10365,11 @@ return jQuery;
 (function(b,c){var $=b.jQuery||b.Cowboy||(b.Cowboy={}),a;$.throttle=a=function(e,f,j,i){var h,d=0;if(typeof f!=="boolean"){i=j;j=f;f=c}function g(){var o=this,m=+new Date()-d,n=arguments;function l(){d=+new Date();j.apply(o,n)}function k(){h=c}if(i&&!h){l()}h&&clearTimeout(h);if(i===c&&m>e){l()}else{if(f!==true){h=setTimeout(i?k:l,i===c?e-m:e)}}}if($.guid){g.guid=j.guid=j.guid||$.guid++}return g};$.debounce=function(d,e,f){return f===c?a(d,e,false):a(d,f,e!==false)}})(this);
 
 /*
+ *  preload
+ */
+
+
+/*
  *  utility
  */
 
@@ -10413,6 +10417,47 @@ var isInViewport = (function () {
  * Created by Kamil on 04.02.2016.
  */
 
+/*
+ *  menu header
+ */
+
+(function() {
+  $('header').load('../pages/modules/menu.html');
+}());
+
+(function menu() {
+
+  var $mainElem = $('.elem');
+
+  if($mainElem.children().length < 1){
+    setTimeout(function() {
+      menu();
+      return false;
+    },100)
+  }
+
+  $mainElem.on('mouseover', function(elem){
+    console.log('najezdzam');
+    var subMenu = $(this).find('.sub');
+    var elements = subMenu.find('.sub-elem');
+    elements.each(function(i, e){
+      setTimeout(function(){
+        $(e).stop().slideDown('normal');
+      }, i * 100);
+    });
+  });
+
+  $mainElem.on('mouseout', function(elem){
+    var subMenu = $(this).find('.sub');
+    var elements = subMenu.find('.sub-elem');
+    elements.each(function(i, e){
+      setTimeout(function(){
+        $(e).stop().slideUp('normal');
+      }, i * 100);
+    });
+  });
+
+}());
 
 /*
  *  animated section
@@ -10569,37 +10614,6 @@ $(document).ready(function() {
 	});
 });
 /*
- *  menu header
- */
-
-$(document).ready(function () {
-
-  var $subMenu = $('.sub');
-      $mainElem = $('.elem');
-
-
-  $mainElem.on('mouseover', function(elem){
-    var subMenu = $(this).find('.sub');
-    var elements = subMenu.find('.sub-elem');
-    elements.each(function(i, e){
-      setTimeout(function(){
-        $(e).stop().slideDown('normal');
-      }, i * 100);
-    });
-  });
-
-  $mainElem.on('mouseout', function(elem){
-    var subMenu = $(this).find('.sub');
-    var elements = subMenu.find('.sub-elem');
-    elements.each(function(i, e){
-      setTimeout(function(){
-        $(e).stop().slideUp('normal');
-      }, i * 100);
-    });
-  });
-
-}());
-/*
  *  live-reloader
  *    :reloader - reloads page content without reloading the page
  *    :stateHelper - sets state of window.history
@@ -10636,7 +10650,7 @@ var reloader = (function () {
   return {
     loadContent: loadContent
   }
-}());
+});
 
 
 var stateHelper = (function () {
@@ -10673,4 +10687,4 @@ var stateHelper = (function () {
     setActualState: setActualState,
     preventRefresh: preventRefresh
   }
-}());
+});

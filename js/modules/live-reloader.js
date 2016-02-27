@@ -35,7 +35,7 @@ var reloader = (function () {
   return {
     loadContent: loadContent
   }
-}());
+});
 
 
 var stateHelper = (function () {
@@ -72,4 +72,4 @@ var stateHelper = (function () {
     setActualState: setActualState,
     preventRefresh: preventRefresh
   }
-}());
+});
