@@ -148,8 +148,6 @@ table {
  */
 body {
   font-family: "Lato", sans-serif;
-  width: 60%;
-  margin: 20px auto 20px auto;
   background: #085078;
   background: radial-gradient(ellipse farthest-side at 100% 100%, #B5CE8B 5%, #085078 130%); }
 
@@ -162,6 +160,10 @@ a {
   #main-container .section {
     opacity: 0;
     margin-top: 100px; }
+
+.page-module {
+  padding: 50px 20% 50px 20%;
+  height: 100%; }
 
 /*
  *
