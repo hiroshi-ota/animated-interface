@@ -10,7 +10,8 @@ var dialogBox = function (elem) {
       btnOk: 'OK',
       btnCancel: 'Cancel',
       funcOk: false,
-      funcCancel: false
+      funcCancel: false,
+      url: false
 
     }, elem.data('dialogbox'));
 
@@ -65,8 +66,13 @@ var dialogBox = function (elem) {
 
     dialog.find('.btnOk')
       .on('click', function () {
+        if(options.url){
+          window.location = options.url;
+        } else if(options.funcOk) {
+          options.funcOk();
+        }
         removeDialog();
-      })
+      });
   };
 
   var removeDialog = function () {
