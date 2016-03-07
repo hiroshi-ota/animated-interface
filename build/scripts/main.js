@@ -10689,6 +10689,14 @@ var stateHelper = (function () {
     preventRefresh: preventRefresh
   }
 });
+/*
+ *  live-reloader
+ *    :reloader - reloads page content without reloading the page
+ *    :stateHelper - sets state of window.history
+ */
+
+//TODO: add options: only inform (just OK)
+
 var dialogBox = function (elem) {
 
   elem.nodeType ? elem = $(elem) : '';
@@ -10701,7 +10709,8 @@ var dialogBox = function (elem) {
       btnOk: 'OK',
       btnCancel: 'Cancel',
       funcOk: false,
-      funcCancel: false
+      funcCancel: false,
+      url: false
 
     }, elem.data('dialogbox'));
 
@@ -10756,8 +10765,13 @@ var dialogBox = function (elem) {
 
     dialog.find('.btnOk')
       .on('click', function () {
+        if(options.url){
+          window.location = options.url;
+        } else if(options.funcOk) {
+          options.funcOk();
+        }
         removeDialog();
-      })
+      });
   };
 
   var removeDialog = function () {
