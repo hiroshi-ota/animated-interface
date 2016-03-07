@@ -1,7 +1,5 @@
 /*
- *  live-reloader
- *    :reloader - reloads page content without reloading the page
- *    :stateHelper - sets state of window.history
+ *  dialog-box
  */
 
 //TODO: add options: only inform (just OK)
