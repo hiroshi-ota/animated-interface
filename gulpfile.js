@@ -34,7 +34,7 @@ gulp.task('scripts', function () {
 gulp.task('styles', function () {
   return gulp.src('sass/style.scss')
     .pipe(sass())
-    .pipe(autoprefix('last 4 version', 'safari 5', 'ie 7', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    .pipe(autoprefix({browsers: ['last 4 version']}))
     .pipe(concat('main.css'))
     .pipe(ify(!dev, minifyCss()))
     .pipe(gulp.dest('build/styles/'))

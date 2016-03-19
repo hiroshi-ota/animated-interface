@@ -1,0 +1,26 @@
+// ***** BUTTONS *****
+
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  font-weight: bolder;
+  margin: 0 10px 0 0;
+  padding: 0 $padding-s;
+  cursor: pointer;
+  //width: 80px;
+  color: $c-second;
+  background-color: $c-main;
+
+  border: 1px solid $c-second;
+  border-radius: 3px;
+  transition: all 0.3s;
+
+  &:hover {
+    color: $c-main;
+    background-color: $c-second;
+  }
+
+  @include clearfix;
+
+}
