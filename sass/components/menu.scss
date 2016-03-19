@@ -3,60 +3,26 @@
 // header menu
 
 header {
+  position: absolute;
+  width: 100%;
+  top: 0;
 
   .menu {
+    @include header-menu-text;
+    margin-top: $margin-l;
+    text-align: center;
 
-    ul {
+    a {
+      margin: 0 $margin-l*2 50px 0;
+      border-bottom: 0 solid $c-main;
+      transition: border-width .06s ease-in-out;
 
-      &.first {
-        text-align: center;
-        margin-left: - ($menu-elem-margin/2);
-        padding: 0;
+      &:hover {
+        border-width: 2px;
       }
     }
 
-    li {
-      position: relative;
-      display: inline-block;
-      cursor: pointer;
-      list-style: none;
-      @include header-menu-font();
 
-      &.elem {
-        width: $sub-elem-width;
-        transition:all 0.3s ease;
-        &:hover {
-          transform: scale(1.3);
-        }
-      }
-
-      .sub{
-        ul {
-          position: absolute;
-          padding: 0;
-          left: 0;
-          right: 0;
-        }
-        .sub-elem{
-          position: relative;
-          display: none;
-          color: $c-second;
-          margin: 0;
-        }
-
-        a {
-          @include hover-color-shadow($c-second, $c-third);
-        }
-      }
-
-      &:nth-child(n+2) {
-        margin-left: $menu-elem-margin;
-      }
-
-      a {
-        @include hover-color-shadow($c-main, $c-second, 1px 1px 1px $c-main);
-      }
-    }
   }
 }
 

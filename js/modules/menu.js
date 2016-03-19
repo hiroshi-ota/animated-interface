@@ -2,10 +2,6 @@
  *  menu header
  */
 
-(function() {
-  $('header').load('../pages/modules/menu.html');
-}());
-
 (function menu() {
 
   var $mainElem = $('.elem');
