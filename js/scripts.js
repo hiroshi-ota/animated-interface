@@ -2,6 +2,7 @@
  *  vendor
  */
 
+
 //import('vendor/jquery-1.11.3.js');
 //import('vendor/throttle_debounce.js');
 
@@ -9,11 +10,22 @@
  *  preload
  */
 
+//import('utility/Yo.js');
+var ns = {};
+//ns.modules = {};
+
+Yo.init({
+  namespace: ns,
+  scriptRoot: 'modules'
+});
+
+//import('utility/yo-utils.js');
 
 /*
  *  utility
  */
 
+//import('utility/ns.js');
 //import('utility/is-in-viewport.js');
 
 /*
