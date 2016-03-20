@@ -10,6 +10,11 @@
     position: relative;
     margin-top: 30px;
     border-bottom: 1px solid $c-main;
+    line-height: 1.2;
+
+    a {
+      color: inherit;
+    }
 
     &-navigation {
       position: absolute;
@@ -17,16 +22,19 @@
       display: inline;
       left: 0;
       bottom: 0;
+      line-height: 1.8;
 
-      &-elem {
+      & a {
 
-        &:after {
-          content: "\00a0 \00a0  |"
+        padding-bottom: 4px;
+        margin-right: 15px;
+        border-bottom: 1px solid transparent;
+        transition: border-color .2s ease-in-out;
+
+        &:hover {
+          border-color: $c-second;
         }
-      }
 
-      li {
-        display: inline-block;
       }
     }
   }
@@ -45,7 +53,7 @@
     background: $c-main;
     color: $c-grey-text;
 
-    .title {
+    .title-box {
       border-color: $c-grey-text;
     }
   }
