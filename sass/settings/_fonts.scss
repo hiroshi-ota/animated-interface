@@ -20,7 +20,9 @@
 $f-main: 'Lato', sans-serif;
 $f-second: 'Aclonica', sans-serif;
 
-.text {font-size: 14px;}
+$main-text-size: 14px;
+
+.text {font-size: $main-text-size;}
 
 .text-main {
 	@extend .text;
@@ -32,6 +34,12 @@ $f-second: 'Aclonica', sans-serif;
 .text-second {
 	@extend .text;
 	color: $c-second;
+}
+
+.title {
+	font-size: 30px;
+	text-align: right;
+	font-weight: 300;
 }
 
 // mixins

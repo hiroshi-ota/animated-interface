@@ -5,11 +5,37 @@
   box-sizing: border-box;
   border-bottom: 1px solid $c-main;
   overflow: hidden;
+
+  .title-box {
+    position: relative;
+    margin-top: 30px;
+    border-bottom: 1px solid $c-main;
+
+    &-navigation {
+      position: absolute;
+      font-size: $main-text-size;
+      display: inline;
+      left: 0;
+      bottom: 0;
+
+      &-elem {
+
+        &:after {
+          content: "\00a0 \00a0  |"
+        }
+      }
+
+      li {
+        display: inline-block;
+      }
+    }
+  }
 }
 
 .container ~ .container {
   padding-top: 0;
   border-top: 1px solid $c-main;
+
 
   &#modules-container {
     background: black;
@@ -18,5 +44,9 @@
   &#typography-container {
     background: $c-main;
     color: $c-grey-text;
+
+    .title {
+      border-color: $c-grey-text;
+    }
   }
 };
