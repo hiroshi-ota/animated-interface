@@ -11,4 +11,7 @@ node_modules/**/*
 .idea/
 
 #compass
-./sass-cache
+.sass-cache
+
+#build
+build

@@ -3,9 +3,9 @@
   height: 100%;
   padding-top: 100px;
   box-sizing: border-box;
-  border: 2px solid $c-main;
+  border: 1px solid $c-main;
 }
 
 .container ~ .container {
-  background-color: transparent;
+  //background-color: transparent;
 };
