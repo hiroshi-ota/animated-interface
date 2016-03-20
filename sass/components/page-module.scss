@@ -4,6 +4,7 @@
   padding-top: 100px;
   box-sizing: border-box;
   border-bottom: 1px solid $c-main;
+  overflow: hidden;
 }
 
 .container ~ .container {
@@ -12,5 +13,10 @@
 
   &#modules-container {
     background: black;
+  }
+
+  &#typography-container {
+    background: $c-main;
+    color: $c-grey-text;
   }
 };
