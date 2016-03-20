@@ -3,9 +3,14 @@
   height: 100%;
   padding-top: 100px;
   box-sizing: border-box;
-  border: 1px solid $c-main;
+  border-bottom: 1px solid $c-main;
 }
 
 .container ~ .container {
   padding-top: 0;
+  border-top: 1px solid $c-main;
+
+  &#modules-container {
+    background: black;
+  }
 };
