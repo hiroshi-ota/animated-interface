@@ -33,6 +33,7 @@ Yo.init({
  */
 
 //import('modules/preloader.js');
+//import('modules/smooth-scroll.js');
 //import('modules/menu.js');
 //import('modules/page-module.js');
 //import('modules/animated-section.js');
