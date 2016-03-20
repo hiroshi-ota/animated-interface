@@ -12,7 +12,9 @@
 
 //import('utility/Yo.js');
 var ns = {};
-//ns.modules = {};
+ns.modules = {};
+
+modules = ns.modules;
 
 Yo.init({
   namespace: ns,
@@ -34,7 +36,10 @@ Yo.init({
 
 //import('modules/preloader.js');
 //import('modules/smooth-scroll.js');
+//import('modules/_menu-scripts.js');
 //import('modules/menu.js');
+//import('modules/menu-animate-to-side.js');
+//import('modules/side-menu.js');
 //import('modules/page-module.js');
 //import('modules/animated-section.js');
 //import('modules/jLetters.js');
