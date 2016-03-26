@@ -36,6 +36,7 @@ Yo.init({
 
 //import('modules/preloader.js');
 //import('modules/smooth-scroll.js');
+//import('modules/check-background.js');
 //import('modules/_menu-scripts.js');
 //import('modules/menu.js');
 //import('modules/menu-animate-to-side.js');

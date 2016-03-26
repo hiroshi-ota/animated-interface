@@ -11,6 +11,7 @@ modules.sideMenu = (function() {
 
     $sideMenu.children().length < 2 ? animateShow(elem) : '';
 
+    // if smooth scroll is dealing with page navigation
     modules.smoothScroll.reinit();
   };
 
@@ -29,7 +30,6 @@ modules.sideMenu = (function() {
   };
 
   var manageBorder = function() {
-    console.log('animuje border');
     if($border){
       $border.width() > 0 ?
         $border.css({width: 0}) : $border.css({width: $sideMenu.width()});

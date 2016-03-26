@@ -2,7 +2,8 @@ modules.menuScripts = (function() {
 
   var $menu = $('header'),
       $sideMenu = $('.side-menu'),
-      mainMenuHeight = $menu.height();
+      mainMenuHeight = $menu.height(),
+      backgrounds = $('.container');
 
 
     $(window).on('scroll',  $.throttle(200, function() {
@@ -11,5 +12,9 @@ modules.menuScripts = (function() {
         modules.menuAnimateToSideMenu($menu, 'a', $sideMenu) :
         modules.sideMenu.hide();
     }));
+
+    $(document).ready(function() {
+      modules.checkBackground($sideMenu, backgrounds);
+    });
 
 }());
